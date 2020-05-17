@@ -16,7 +16,7 @@ const Header: React.FC<any> = (props) => {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="static" color="secondary">
         <Container maxWidth="lg">
           <Toolbar>
             <Typography variant="h2">

@@ -13,7 +13,7 @@ interface IStore {
 
 function App() {
   const initialStore: IStore ={
-    parts: [{name: 'a', id: 2, status: 'c'}],
+    parts: [],
   }
   return (
     <Provider store={initialStore}>

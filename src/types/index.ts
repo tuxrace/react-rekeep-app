@@ -1,5 +1,5 @@
 export type PartType = {
-    id: number;
+    id: number | string;
     name: string;
     status: string;
   }
