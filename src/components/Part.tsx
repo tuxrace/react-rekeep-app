@@ -1,4 +1,5 @@
 import React from 'react';
+import Card from '@material-ui/core/Card';
 
 const Part = ({
   name,
@@ -9,11 +10,13 @@ const Part = ({
   id: number;
   status: string;
 }) => (
-  <div style={{ border: '1px solid black' }}>
+  <Card>
     <p>{name}</p>
     <p>ID: {id}</p>
     <p>Status: {status}</p>
-  </div>
+  </Card>
+
+  
 );
 
 export default Part;

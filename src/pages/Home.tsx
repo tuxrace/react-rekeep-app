@@ -1,13 +1,21 @@
 import React from 'react';
+import Container from '@material-ui/core/Container';
+import Box from '@material-ui/core/Box';
 import Part from '../components/Part';
+import { useRekeep } from 'rekeep';
+import { PartType } from '../types';
 
 const Home = () => {
+  const {store, update} = useRekeep();
+  const {parts} = store;
   return (
-    <div>
-      These parts are hard-coded; they should be removed.
-      <Part name="Test part" id={123} status="Checked In" />
-      <Part name="Another part" id={456} status="Checked Out" />
-    </div>
+    <Container maxWidth="xl">
+      <Box mt={3} px={3}>
+        {parts.map((part: PartType) => (
+          <Part name={part.name} id={part.id} status={part.status} />
+        ))}
+      </Box>
+    </Container>
   );
 };
 
