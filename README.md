@@ -29,7 +29,7 @@ const App = () => {
 }
 ```
 
-2. To get store data and update function import useRekeep hook.
+2. Get store data and update function anywhere in your app, using the useRekeep hook.
 ```tsx
 import React from 'react'
 import { useRekeep } from 'rekeep'
@@ -65,6 +65,8 @@ if you want to change a value in the store e.g. ```'NAME'```
 
    update('NAME', 'Alfred');
 ```
+### Limitations
+Since we hook to access store data, rekeep can only be used inside a react component.
 
 ## License
 
