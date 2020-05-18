@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/react-rekeep-app/static/js/main.bd626087.chunk.js",
-    "main.js.map": "/react-rekeep-app/static/js/main.bd626087.chunk.js.map",
+    "main.js": "/react-rekeep-app/static/js/main.0b470b86.chunk.js",
+    "main.js.map": "/react-rekeep-app/static/js/main.0b470b86.chunk.js.map",
     "runtime-main.js": "/react-rekeep-app/static/js/runtime-main.63715e25.js",
     "runtime-main.js.map": "/react-rekeep-app/static/js/runtime-main.63715e25.js.map",
-    "static/js/2.2f820e7b.chunk.js": "/react-rekeep-app/static/js/2.2f820e7b.chunk.js",
-    "static/js/2.2f820e7b.chunk.js.map": "/react-rekeep-app/static/js/2.2f820e7b.chunk.js.map",
+    "static/js/2.36b70db9.chunk.js": "/react-rekeep-app/static/js/2.36b70db9.chunk.js",
+    "static/js/2.36b70db9.chunk.js.map": "/react-rekeep-app/static/js/2.36b70db9.chunk.js.map",
     "index.html": "/react-rekeep-app/index.html",
-    "precache-manifest.81c36218525c7f366ef4b4a26c017fa3.js": "/react-rekeep-app/precache-manifest.81c36218525c7f366ef4b4a26c017fa3.js",
+    "precache-manifest.782b84938d4b77a39f76390d2ff1ed76.js": "/react-rekeep-app/precache-manifest.782b84938d4b77a39f76390d2ff1ed76.js",
     "service-worker.js": "/react-rekeep-app/service-worker.js",
-    "static/js/2.2f820e7b.chunk.js.LICENSE.txt": "/react-rekeep-app/static/js/2.2f820e7b.chunk.js.LICENSE.txt"
+    "static/js/2.36b70db9.chunk.js.LICENSE.txt": "/react-rekeep-app/static/js/2.36b70db9.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.63715e25.js",
-    "static/js/2.2f820e7b.chunk.js",
-    "static/js/main.bd626087.chunk.js"
+    "static/js/2.36b70db9.chunk.js",
+    "static/js/main.0b470b86.chunk.js"
   ]
 }
