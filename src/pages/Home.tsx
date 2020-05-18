@@ -19,16 +19,16 @@ const Home = () => {
 
   return (
     <Container maxWidth="lg" className={classes.container}>
-      <Grid container direction="column">
-        <Typography variant="h5" color="secondary" gutterBottom>
-            <strong>List of all parts</strong>
-        </Typography>
-        <Grid>
-          {parts.map((part: PartType, idx: number) => (
-            <Part key={idx} name={part.name} id={part.id} status={part.status} />
-          ))}
+      <Typography variant="h5" color="secondary" gutterBottom>
+          <strong>List of all parts</strong>
+      </Typography>
+      {parts.length > 0 ? parts.map((part: PartType, idx: number) => (
+        <Grid className={classes.part}>
+          <Part key={idx} name={part.name} id={part.id} status={part.status}/>
         </Grid>
-      </Grid>
+      )): (
+      <Typography variant="body1"> {`🔴`}No Parts yet, click +CREATE on the top right side.</Typography>
+      )}
     </Container>
   );
 };

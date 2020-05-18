@@ -28,12 +28,14 @@ const CreatePart = () => {
         if(id === 'id' &&  !/^[0-9]+$/.test(value)){
             return
         }
-        if (value !== ''){
-            setState({...state, [id]: value});
-        }
+        setState({...state, [id]: value});
     }
 
     const handleClick = () => {
+        if(Object.entries(state).some(([key, value]) => value === '' )){
+            alert('All fields are required');
+            return
+        };
         const newPart = state;
         update(PARTS, [...parts, newPart]);
         history.push('/');
@@ -49,7 +51,7 @@ const CreatePart = () => {
                 <Grid item container direction="row" spacing={2} alignItems="center" xs={12}>
                     <Grid item xs={2}>
                         <Typography variant="body1">
-                            Part ID
+                            Part ID*
                         </Typography>
                     </Grid>
                     <Grid item xs={10}>
@@ -59,7 +61,7 @@ const CreatePart = () => {
                 <Grid item container direction="row" spacing={2} alignItems="center" xs={12}>
                     <Grid item xs={2}>
                         <Typography variant="body1">
-                            Part Name
+                            Part Name*
                         </Typography>
                     </Grid>
                     <Grid item xs={10}>
@@ -69,7 +71,7 @@ const CreatePart = () => {
                 <Grid item container direction="row" spacing={2} alignItems="center" xs={12}>
                     <Grid item xs={2}>
                         <Typography variant="body1">
-                            Part Status
+                            Part Status*
                         </Typography>
                     </Grid>
                     <Grid item xs={10}>
@@ -83,7 +85,7 @@ const CreatePart = () => {
                     <Grid item xs={2}>
                     </Grid>
                     <Grid item xs={2}>
-                        <Button color="default" variant="contained" fullWidth><Typography variant="button">Cancel </Typography> </Button>
+                        <Button color="default" variant="contained" fullWidth href="/"><Typography variant="button">Cancel </Typography> </Button>
                     </Grid>
                     <Grid item xs={2}>
                         <Button color="primary" variant="contained" fullWidth onClick={handleClick}><Typography variant="button">Submit </Typography> </Button>
