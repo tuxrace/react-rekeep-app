@@ -2,6 +2,9 @@
 
 > Simple state management using react context and hooks
 
+## Demo app using rekeep
+https://tuxrace.github.io/react-rekeep-app/#/
+
 ## Install
 
 ```bash
@@ -47,7 +50,7 @@ const App = () => {
 ### Store
 Store is where you put your global state, its an object that has a key and a value.
 
-### Spdate
+### Update
 Update is a function to change the value of a specifies store key
 
 
