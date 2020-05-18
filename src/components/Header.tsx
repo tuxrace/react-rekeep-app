@@ -26,10 +26,10 @@ const Header: React.FC<any> = (props) => {
               {`Parts Store`}
             </Typography>
             <Link to="/">
-              <Button> HOME</Button>
+              <Button><Typography className={classes.buttonText} variant="button"><strong>HOME</strong></Typography></Button>
             </Link>
             <Link to="/create">
-              <Button> CREATE</Button>
+              <Button><Typography className={classes.buttonText} variant="button"><strong>+ CREATE</strong></Typography></Button>
             </Link>
           </Toolbar>
         </Container>

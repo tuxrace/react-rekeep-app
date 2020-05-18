@@ -7,4 +7,7 @@ export default (theme: Theme) => ({
     title: {
       flexGrow: 1,
     },
+    buttonText: {
+      color: 'white',
+    },
   })

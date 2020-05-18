@@ -4,16 +4,15 @@ import CreatePart from './pages/CreatePart';
 import Home from './pages/Home';
 import Header from './components/Header';
 import { Provider } from 'rekeep';
-import { PartType } from './types';
+import { IStore } from './types';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import * as CONSTANTS from './constants';
 
-interface IStore {
-  parts: PartType[]
-}
+const { ROUTES, PARTS } = CONSTANTS;
 
 function App() {
-  const initialStore: IStore ={
-    parts: [],
+  const initialStore: IStore = {
+    [PARTS]: [],
   }
   return (
     <Provider store={initialStore}>
@@ -22,8 +21,8 @@ function App() {
         <div className="App">
           <Header />
           <div>
-            <Route exact path="/" component={Home} />
-            <Route path="/create" component={CreatePart} />
+            <Route exact path={ROUTES.HOME} component={Home} />
+            <Route path={ROUTES.CREATE} component={CreatePart} />
           </div>
         </div>
       </Router>

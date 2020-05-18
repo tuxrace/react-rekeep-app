@@ -1,16 +1,21 @@
 import React, { useState } from 'react';
 import Container from '@material-ui/core/Container';
-import Box from '@material-ui/core/Box';
-import { Typography, Grid, TextField, Button } from '@material-ui/core';
+import { Typography, Grid, TextField, Button, makeStyles, Radio, FormControlLabel, RadioGroup } from '@material-ui/core';
 import { useRekeep } from 'rekeep';
 import { PartType } from '../types';
 import { useHistory } from 'react-router-dom';
+import styles from './Pages.styles';
+import * as CONSTANTS from '../constants';
+
+const { PARTS } = CONSTANTS;
+const useStyles = makeStyles(styles);
 
 const CreatePart = () => {
     const { store, update } = useRekeep();
-    const history = useHistory();
-    const { parts } = store;
+    const parts = store[PARTS];
 
+    const classes = useStyles();
+    const history = useHistory();
     const [state, setState] = useState<PartType>({
         id: '',
         name: '',
@@ -19,6 +24,10 @@ const CreatePart = () => {
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const {id, value} = e.target;
+        // Accepts only numbers for id field
+        if(id === 'id' &&  !/^[0-9]+$/.test(value)){
+            return
+        }
         if (value !== ''){
             setState({...state, [id]: value});
         }
@@ -26,12 +35,11 @@ const CreatePart = () => {
 
     const handleClick = () => {
         const newPart = state;
-        update('parts', [...parts, newPart]);
+        update(PARTS, [...parts, newPart]);
         history.push('/');
     }
 
-    return <Container maxWidth="lg">
-        <Box mt={3} px={3}>
+    return <Container maxWidth="lg" className={classes.container}>
             <Grid container direction="column" spacing={3}>
                 <Grid item>
                 <Typography variant="h5" color="secondary">
@@ -45,7 +53,7 @@ const CreatePart = () => {
                         </Typography>
                     </Grid>
                     <Grid item xs={10}>
-                        <TextField id="id" variant="filled" fullWidth placeholder="e.g. Allen Wrench" value={state.id} onChange={handleChange}/>
+                        <TextField id="id" data-testid="part-id" variant="filled" fullWidth placeholder="e.g. 1234" value={state.id} onChange={handleChange} required/>
                     </Grid>
                 </Grid>
                 <Grid item container direction="row" spacing={2} alignItems="center" xs={12}>
@@ -55,7 +63,7 @@ const CreatePart = () => {
                         </Typography>
                     </Grid>
                     <Grid item xs={10}>
-                        <TextField id="name" variant="filled" fullWidth placeholder="e.g. Allen Wrench" onChange={handleChange}/>
+                        <TextField id="name" data-testid="part-name" variant="filled" fullWidth placeholder="e.g. Allen Wrench" onChange={handleChange}/>
                     </Grid>
                 </Grid>
                 <Grid item container direction="row" spacing={2} alignItems="center" xs={12}>
@@ -65,7 +73,10 @@ const CreatePart = () => {
                         </Typography>
                     </Grid>
                     <Grid item xs={10}>
-                        <TextField id="status" variant="filled" fullWidth placeholder="e.g. Allen Wrench" onChange={handleChange}/>
+                        <RadioGroup onChange={handleChange}>
+                            <FormControlLabel value="Checked In" control={<Radio id="status" />} label="Checked In" />
+                            <FormControlLabel value="Checked Out" control={<Radio id="status" />} label="Checked Out" />
+                        </RadioGroup>
                     </Grid>
                 </Grid>
                 <Grid item container direction="row" spacing={2} alignItems="center" xs={12}>
@@ -79,7 +90,6 @@ const CreatePart = () => {
                     </Grid>
                 </Grid>
             </Grid>
-        </Box>
     </Container>
 }
 
