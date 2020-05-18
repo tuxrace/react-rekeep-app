@@ -84,7 +84,7 @@ const CreatePart = () => {
                 </Grid>
                 <Grid item container direction="row" spacing={2} alignItems="center" xs={12} lg={6}>
                     <Grid item xs={12} lg={6}>
-                        <Button color="default" variant="contained" fullWidth href="/" className={classes.buttons}><Typography variant="button">Cancel </Typography> </Button>
+                        <Button color="default" variant="contained" fullWidth href="#" onClick={() => history.push('/')} className={classes.buttons}><Typography variant="button">Cancel </Typography> </Button>
                     </Grid>
                     <Grid item xs={12} lg={6}>
                         <Button color="primary" variant="contained" fullWidth onClick={handleClick} className={classes.buttons}><Typography variant="button">Submit </Typography> </Button>
