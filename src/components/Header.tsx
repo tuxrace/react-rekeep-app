@@ -21,14 +21,14 @@ const Header = () => {
             <Typography variant="h2">
               {`🔨`}
             </Typography>
-            <Typography variant="h5" className={classes.title}>
+            <Typography variant="h5">
               {`Parts Store`}
             </Typography>
-            <Link to="/">
-              <Button><Typography className={classes.buttonText} variant="button"><strong>HOME</strong></Typography></Button>
+            <Link to="/" className={classes.home}>
+              <Button><Typography variant="button"><strong>HOME</strong></Typography></Button>
             </Link>
             <Link to="/create">
-              <Button><Typography className={classes.buttonText} variant="button"><strong>+ CREATE</strong></Typography></Button>
+              <Button variant="contained" color="primary"><Typography variant="button"><strong>+CREATE</strong></Typography></Button>
             </Link>
           </Toolbar>
         </Container>

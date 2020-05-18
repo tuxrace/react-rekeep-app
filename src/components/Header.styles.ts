@@ -4,13 +4,15 @@ export default (theme: Theme) => ({
     root: {
       flexGrow: 1,
       '& a:-webkit-any-link': {
-        textDecoration: 'none'
+        textDecoration: 'none',
+        paddingRight: theme.spacing(1)
       }
     },
-    title: {
+    home: {
+      padding: theme.spacing(0, 4),
       flexGrow: 1,
-    },
-    buttonText: {
-      color: 'white',
+      '& .MuiTypography-root': {
+        color: 'white',
+      }
     },
   })
