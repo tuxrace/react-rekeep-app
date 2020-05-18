@@ -34,13 +34,13 @@ const App = () => {
 import React from 'react'
 import { useRekeep } from 'rekeep'
 
-const App = () => {
+const Name = () => {
    const { store, update } = useRekeep();
    const name = store['NAME'];
 
    render() {
       return <div>
-         <p> {name}</p>
+         <p> My name is {name}</p>
          <button onClick={() => update('NAME', 'Alfred')}> Update name to Alfred</button>
       </div>
    }
