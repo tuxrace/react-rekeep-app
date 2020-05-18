@@ -2,7 +2,7 @@
 
 > Simple state management using react context and hooks
 
-## Demo app using rekeep
+### Demo app using rekeep
 https://tuxrace.github.io/react-rekeep-app/#/
 
 ## Install
