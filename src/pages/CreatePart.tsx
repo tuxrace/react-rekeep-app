@@ -32,6 +32,7 @@ const CreatePart = () => {
     }
 
     const handleClick = () => {
+        // Vaidate if all fields have value
         if(Object.entries(state).some(([key, value]) => value === '' )){
             alert('All fields are required');
             return
