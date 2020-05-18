@@ -48,11 +48,23 @@ const Name = () => {
 ```
 
 ### Store
-Store is where you put your global state, its an object that has a key and a value.
+Store is where you put your global state, its an object that has a key and a value. If you want to get a value of a key from the store e.g ```'NAME'```
+```js
+   const { store } = useRekeep();
+   const name = store['NAME'];
+
+   console.log(name);
+```
 
 ### Update
-Update is a function to change the value of a specifies store key
+Update is a function to change the value of a specifies store key.
+if you want to change a value in the store e.g. ```'NAME'```
 
+```js
+   const { store } = useRekeep();
+
+   update('NAME', 'Alfred');
+```
 
 ## License
 
