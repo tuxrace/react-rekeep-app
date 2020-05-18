@@ -50,46 +50,44 @@ const CreatePart = () => {
                 </Typography>
                 </Grid>
                 <Grid item container direction="row" spacing={2} alignItems="center" xs={12}>
-                    <Grid item xs={2}>
+                    <Grid item xs={12} lg={2}>
                         <Typography variant="body1">
                             Part ID*
                         </Typography>
                     </Grid>
-                    <Grid item xs={10}>
+                    <Grid item xs={12} lg={10}>
                         <TextField id="id" data-testid="part-id" variant="filled" fullWidth placeholder="e.g. 1234" value={state.id} onChange={handleChange} required/>
                     </Grid>
                 </Grid>
                 <Grid item container direction="row" spacing={2} alignItems="center" xs={12}>
-                    <Grid item xs={2}>
+                    <Grid item  xs={12} lg={2}>
                         <Typography variant="body1">
                             Part Name*
                         </Typography>
                     </Grid>
-                    <Grid item xs={10}>
+                    <Grid item xs={12} lg={10}>
                         <TextField id="name" data-testid="part-name" variant="filled" fullWidth placeholder="e.g. Allen Wrench" onChange={handleChange}/>
                     </Grid>
                 </Grid>
                 <Grid item container direction="row" spacing={2} alignItems="center" xs={12}>
-                    <Grid item xs={2}>
+                    <Grid item  xs={12} lg={2}>
                         <Typography variant="body1">
                             Part Status*
                         </Typography>
                     </Grid>
-                    <Grid item xs={10}>
+                    <Grid item xs={12} lg={10}>
                         <RadioGroup onChange={handleChange}>
                             <FormControlLabel value="Checked In" control={<Radio id="status" />} label="Checked In" />
                             <FormControlLabel value="Checked Out" control={<Radio id="status" />} label="Checked Out" />
                         </RadioGroup>
                     </Grid>
                 </Grid>
-                <Grid item container direction="row" spacing={2} alignItems="center" xs={12}>
-                    <Grid item xs={2}>
+                <Grid item container direction="row" spacing={2} alignItems="center" xs={12} lg={6}>
+                    <Grid item xs={12} lg={6}>
+                        <Button color="default" variant="contained" fullWidth href="/" className={classes.buttons}><Typography variant="button">Cancel </Typography> </Button>
                     </Grid>
-                    <Grid item xs={2}>
-                        <Button color="default" variant="contained" fullWidth href="/"><Typography variant="button">Cancel </Typography> </Button>
-                    </Grid>
-                    <Grid item xs={2}>
-                        <Button color="primary" variant="contained" fullWidth onClick={handleClick}><Typography variant="button">Submit </Typography> </Button>
+                    <Grid item xs={12} lg={6}>
+                        <Button color="primary" variant="contained" fullWidth onClick={handleClick} className={classes.buttons}><Typography variant="button">Submit </Typography> </Button>
                     </Grid>
                 </Grid>
             </Grid>

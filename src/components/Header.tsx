@@ -21,7 +21,7 @@ const Header = () => {
             <Typography variant="h2">
               {`🔨`}
             </Typography>
-            <Typography variant="h4" className={classes.title}>
+            <Typography variant="h5" className={classes.title}>
               {`Parts Store`}
             </Typography>
             <Link to="/">

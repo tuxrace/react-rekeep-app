@@ -7,7 +7,10 @@ import { Provider } from 'rekeep';
 import { IStore } from './types';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import * as CONSTANTS from './constants';
+import { createMuiTheme, responsiveFontSizes, ThemeProvider } from '@material-ui/core/styles';
 
+let theme = createMuiTheme();
+theme = responsiveFontSizes(theme);
 const { ROUTES, PARTS } = CONSTANTS;
 
 function App() {
@@ -16,16 +19,18 @@ function App() {
   }
   return (
     <Provider store={initialStore}>
-      <CssBaseline/>
-      <Router>
-        <div className="App">
-          <Header />
-          <div>
-            <Route exact path={ROUTES.HOME} component={Home} />
-            <Route path={ROUTES.CREATE} component={CreatePart} />
+      <ThemeProvider theme={theme}>
+        <CssBaseline/>
+        <Router>
+          <div className="App">
+            <Header />
+            <div>
+              <Route exact path={ROUTES.HOME} component={Home} />
+              <Route path={ROUTES.CREATE} component={CreatePart} />
+            </div>
           </div>
-        </div>
-      </Router>
+        </Router>
+      </ThemeProvider>
     </Provider>
   );
 }
