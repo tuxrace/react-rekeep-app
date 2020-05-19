@@ -10,7 +10,17 @@ export default (theme: Theme) => ({
     part: {
         padding: theme.spacing(1, 0)
     },
+    buttonsContainer: {
+       [theme.breakpoints.down('sm')]: {
+           flexFlow: 'column-reverse',
+       },
+       '& .MuiGrid-item': {
+        [theme.breakpoints.down('sm')]: {
+            width: '100%',
+        }
+       }
+    },
     buttons: {
-       height: theme.spacing(7)
+       height: theme.spacing(7),
     }
 })

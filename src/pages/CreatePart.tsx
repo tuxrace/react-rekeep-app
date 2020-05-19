@@ -49,7 +49,7 @@ const CreatePart = () => {
                     <strong>Create Part</strong>
                 </Typography>
                 </Grid>
-                <Grid item container direction="row" spacing={2} alignItems="center" xs={12}>
+                <Grid item container direction="row" spacing={2} alignItems="center" sm={12}>
                     <Grid item xs={12} lg={2}>
                         <Typography variant="body1">
                             Part ID*
@@ -59,8 +59,8 @@ const CreatePart = () => {
                         <TextField id="id" data-testid="part-id" variant="filled" fullWidth placeholder="e.g. 1234" value={state.id} onChange={handleChange} required/>
                     </Grid>
                 </Grid>
-                <Grid item container direction="row" spacing={2} alignItems="center" xs={12}>
-                    <Grid item  xs={12} lg={2}>
+                <Grid item container direction="row" spacing={2} alignItems="center" sm={12}>
+                    <Grid item xs={12} lg={2}>
                         <Typography variant="body1">
                             Part Name*
                         </Typography>
@@ -82,7 +82,7 @@ const CreatePart = () => {
                         </RadioGroup>
                     </Grid>
                 </Grid>
-                <Grid item container direction="row" spacing={2} alignItems="center" xs={12} lg={6}>
+                <Grid item container spacing={2} direction="row" alignItems="center" className={classes.buttonsContainer} sm={12} lg={6}>
                     <Grid item xs={12} lg={6}>
                         <Button color="default" variant="contained" fullWidth href="#" onClick={() => history.push('/')} className={classes.buttons}><Typography variant="button">Cancel </Typography> </Button>
                     </Grid>
