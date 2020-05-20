@@ -15,12 +15,14 @@ npm start
 
 ## Usage
 
-1. Wrap Provider to your app and set an initialStore.
+1. Import Provider from rekeep and wrap Provider to your app then set an initialStore.
+
 ```tsx
 import React from 'react'
 import { Provider } from 'rekeep'
 
 const App = () => {
+   // An initialStore must always have a default state.
    const initialStore = {
       'NAME': 'Jim'
    };
@@ -48,6 +50,12 @@ const Name = () => {
    }
 }
 ```
+## UseRekeep hook
+
+| Properties    | Type      | Optional |
+| :---          | :---      | :---     |
+| store         | object    | Yes      |
+| update        | method    | Yes      |
 
 ### Store
 Store is where you put your global state, its an object that has a key and a value. If you want to get a value of a key from the store e.g ```'NAME'```
@@ -67,6 +75,8 @@ if you want to change a value in the store e.g. ```'NAME'```
 
    update('NAME', 'Alfred');
 ```
+
+
 ### Limitations
 Since we use hook to access store data, rekeep can only be used inside a react component.
 
