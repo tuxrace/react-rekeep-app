@@ -8,7 +8,9 @@ https://tuxrace.github.io/react-rekeep-app/#/create
 ## Install
 
 ```bash
-npm install --save rekeep
+npm install
+npm install --save lib/rekeep
+npm start
 ```
 
 ## Usage
@@ -67,11 +69,6 @@ if you want to change a value in the store e.g. ```'NAME'```
 ```
 ### Limitations
 Since we use hook to access store data, rekeep can only be used inside a react component.
-
-## Run locally
-- npm install
-- npm install --save lib/rekeep
-- npm start
 
 ## Run test with coverage
 - npm run test -- --coverage
