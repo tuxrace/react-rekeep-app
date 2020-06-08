@@ -55,13 +55,21 @@ const CreatePart = () => {
     }
 
     const isValid = (values: any, validationObject: any) => {
+        // const newErrors = Object.keys(validationObject).reduce((acc: any, cur) => {
+        //     if (validationObject[cur] === 'required'){
+        //         if (!values[cur])
+        //             acc[cur] = true
+        //     }
+        //     return acc;
+        // }, {});
         Object.keys(validationObject).forEach(key => {
-            if (validationObject[key] === 'required') {
-                if (values[key] === '') {
-                    setErrors({...errors, [key]: true });
+            if (validationObject[key] === 'required'){
+                if(!values[key]){
+                    setErrors((curError: any) => ({...curError, [key]: true}));
                 }
             }
         });
+        
         return Object.keys(errors).length === 0
     }
 
@@ -81,7 +89,8 @@ const CreatePart = () => {
                         </Typography>
                     </Grid>
                     <Grid item xs={12} lg={10}>
-                        <TextField id="id" data-testid="part-id" variant="filled" fullWidth placeholder="e.g. 1234" value={values.id} error  onChange={handleChange} required/>
+                        <TextField id="id" data-testid="part-id" variant="filled" fullWidth placeholder="e.g. 1234" value={values.id} {...(errors.name ? {error: true } : {})}  onChange={handleChange} required/>
+                        {errors.name && <Typography variant="subtitle2" color="error">Part ID is required</Typography>}
                     </Grid>
                 </Grid>
                 <Grid item container direction="row" spacing={2} alignItems="center" sm={12}>
@@ -91,7 +100,8 @@ const CreatePart = () => {
                         </Typography>
                     </Grid>
                     <Grid item xs={12} lg={10}>
-                        <TextField id="name" data-testid="part-name" variant="filled" fullWidth placeholder="e.g. Allen Wrench"  value={values.name} {...(errors.name ? 'error' : {})} onChange={handleChange}/>
+                        <TextField id="name" data-testid="part-name" variant="filled" fullWidth placeholder="e.g. Allen Wrench"  value={values.name} {...(errors.name ? {error: true } : {})} onChange={handleChange}/>
+                        {errors.name && <Typography variant="subtitle2" color="error">Part Name is required</Typography>}
                     </Grid>
                 </Grid>
                 <Grid item container direction="row" spacing={2} alignItems="center" xs={12}>
@@ -102,7 +112,7 @@ const CreatePart = () => {
                     </Grid>
                     <Grid item xs={12} lg={10}>
                     <FormControl component="fieldset" error>
-                        {errors.status && <Typography variant="subtitle2">Select a Part Status</Typography>}
+                        {errors.status && <Typography variant="subtitle2" color="error">Select a Part Status</Typography>}
                         <RadioGroup onChange={handleChange} >
                             <FormControlLabel value="Checked In" control={<Radio id="status" />} label="Checked In" />
                             <FormControlLabel value="Checked Out" control={<Radio id="status" />} label="Checked Out" />
