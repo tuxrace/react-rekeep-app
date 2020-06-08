@@ -1,4 +1,4 @@
-export type PartType = {
+export interface PartType {
     id: number | string;
     name: string;
     status: string;

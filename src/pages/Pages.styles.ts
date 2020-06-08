@@ -22,5 +22,8 @@ export default (theme: Theme) => ({
     },
     buttons: {
        height: theme.spacing(7),
+    },
+    error: {
+
     }
 })
