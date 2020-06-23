@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter as Router, Route } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import CreatePart from './pages/CreatePart';
 import Home from './pages/Home';
 import Header from './components/Header';
@@ -24,10 +24,10 @@ function App() {
         <Router>
           <div className="App">
             <Header />
-            <div>
+            <Switch>
               <Route exact path={ROUTES.HOME} component={Home} />
               <Route path={ROUTES.CREATE} component={CreatePart} />
-            </div>
+            </Switch>
           </div>
         </Router>
       </ThemeProvider>
