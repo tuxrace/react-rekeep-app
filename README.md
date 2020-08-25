@@ -67,7 +67,7 @@ Store is where you put your global state, its an object that has a key and a val
 ```
 
 ### Update
-Update is a function to change the value of a specifies store key.
+Update is a function to change the value of a specifies store key
 if you want to change a value in the store e.g. ```'NAME'```
 
 ```js
