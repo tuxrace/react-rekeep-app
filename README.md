@@ -76,7 +76,6 @@ if you want to change a value in the store e.g. ```'NAME'```
    update('NAME', 'Alfred');
 ```
 
-
 ### Limitations
 Since we use hook to access store data, rekeep can only be used inside a react component.
 
